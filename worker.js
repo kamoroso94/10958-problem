@@ -3,8 +3,8 @@ addEventListener("message", (event) => {
 });
 
 function createExpr(target) {
+    const digits = 9;
     function _createExpr(target, expr, leafCount) {
-        const digits = 9;
         if(leafCount == digits) {
             const leaves = expr.leaves();
             for(let i = 0; i < leaves.length; i++) {
@@ -96,7 +96,7 @@ class ExpressionNode {
 
     compile(ops) {
         if(this.value in ops) {
-            return `${ops[this.value](this.left.compile(ops), this.right.compile(ops))}`;
+            return ops[this.value](this.left.compile(ops), this.right.compile(ops));
         } else {
             return this.value;
         }
