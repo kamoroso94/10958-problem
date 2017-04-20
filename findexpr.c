@@ -187,7 +187,7 @@ double ExprNode_eval(ExprNode* root) {
 	}
 }
 
-// put expression tree into string, returns length
+// put expression tree into string, return length
 int ExprNode_toString(ExprNode* root, char* expr, int index) {
 	if(root == NULL) {
 		return index;
